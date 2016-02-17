@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ # - Busca a palavra teste em um arquivo chamado "arquivoteste".
+ # - Caso encontre a palavra no arquivo, é utilizado então o sed para alterar
+ #    a palavra teste por try.
+ # - Apesar de simples, esse algoritmo pode ser muito útil
+ # - Aprende-se aqui o básico do comando sed.
+
+clear
+cat arquivoteste | grep "teste" | sed -i -e 's/'try'/'teste'/g' arquivoteste
