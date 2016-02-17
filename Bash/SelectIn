@@ -1,7 +1,10 @@
 #!bin/bash
 
+ # - Seleciona um arquivo no ambiente em que estiver sendo executado
+ # - Deve se escolher pelo número do índice.
+
 select nome in *;
-do 
+do
     echo Você selecionou o arquivo $nome, índice $REPLY
     break;
 done
