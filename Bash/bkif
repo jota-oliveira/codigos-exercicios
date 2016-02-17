@@ -1,0 +1,13 @@
+#!/bin/bash
+
+  # - Script simples de automação de backup de um banco mysql
+  # - Basta clicar duas vezes sobre o arquivo, e selecionar a opção executar em
+  #     terminal
+  # - Funciona para um usuário root na máquina local, embora seja simples editar
+  #     Para funcionar em qualquer usuário, e em qualquer ambiente.
+  # - Cria uma pasta nomeada de backup_NOMEDOBANCO na home.
+
+echo 'Digite o nome do banco que será restaurado'
+read bd
+mkdir ~/backup_$bd
+echo 'Digite a senha do usuário root MySQL' && mysqldump -u root -p $bd > backup_$bd\.sql && mv backup_$bd\.sql ~/backup_$bd && echo 'Sucesso na operação!'
