@@ -1,0 +1,7 @@
+#!bin/bash
+
+select nome in *;
+do 
+    echo Você selecionou o arquivo $nome, índice $REPLY
+    break;
+done
