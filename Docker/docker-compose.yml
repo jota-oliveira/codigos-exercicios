@@ -1,0 +1,26 @@
+version: "3"
+services:
+  apache:
+    build: './apache-php7.0/'
+    volumes:
+      - ./projeto/:/var/www/html/
+    ports:
+      - "5000:80"
+    depends_on:
+      - mysql
+    networks:
+      - frontend
+      - backend
+
+  mysql:
+    image: mysql:5.6.40
+    networks:
+      - backend
+    ports:
+      - "3309:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+
+networks:
+  frontend:
+  backend:
